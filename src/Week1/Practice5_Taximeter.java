@@ -22,6 +22,6 @@ public class Practice5_Taximeter {
             total = km * perKm + startPrice;
         }
 
-        System.out.println("Toplam tutar: " + total);
+        System.out.println("Toplam tutar: " + total + "TL");
     }
 }

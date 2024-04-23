@@ -2,7 +2,7 @@ package Week1;
 
 import java.util.Scanner;
 
-public class Practice6_AreaAndPerimeter {
+public class Practice7_AreaOfCircleSegment {
     public static void main(String[] args) {
         int r, a;
         double pi = 3.14, area;

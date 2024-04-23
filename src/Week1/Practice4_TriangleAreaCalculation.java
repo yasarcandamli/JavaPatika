@@ -18,6 +18,7 @@ public class Practice4_TriangleAreaCalculation {
 
         if (edge1 <= 0 || edge2 <= 0 || edge3 <= 0) {
             System.out.println("Lütfen Kenar Uzunluklarını 0'dan Büyük Giriniz!");
+            return;
         }
 
         halfPerimeter = (edge1 + edge2 + edge3) / 2;

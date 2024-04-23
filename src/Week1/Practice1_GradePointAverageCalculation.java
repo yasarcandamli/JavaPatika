@@ -38,6 +38,7 @@ public class Practice1_GradePointAverageCalculation {
         gradeAverage = gradeSum / 6;
 
         /*Program çıktısının oluşturulması ve kullanıcıya gösterilmesi:*/
+        System.out.println("Ortalamanız: " + gradeAverage);
         String message = (gradeAverage >= 60) ? "Sınıfı Geçti" : "Sınıfta Kaldı";
         System.out.println(message);
     }

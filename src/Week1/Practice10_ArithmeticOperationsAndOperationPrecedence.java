@@ -17,6 +17,6 @@ public class Practice10_ArithmeticOperationsAndOperationPrecedence {
         c = input.nextInt();
 
         result = a + b * c - b;
-        System.out.println("İşlem sonucu: " + result);
+        System.out.println("İşlem Sonucu: " + result);
     }
 }

@@ -2,7 +2,7 @@ package Week1;
 
 import java.util.Scanner;
 
-public class Practice21_EvenNumbers {
+public class Practice21_DividedBy3and4 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int i, j, sum = 0, counter = 0, average;

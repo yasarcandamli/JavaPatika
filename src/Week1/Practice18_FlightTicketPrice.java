@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class Practice18_FlightTicketPrice {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        /*Definition of variables*/
         int distance, passengerAge, flightType;
         double unitPrice = 0.10, totalPrice = 0.0;
         boolean isError = false;
 
+        /*Taking values of variables from the user*/
         System.out.print("Mesafeyi giriniz: ");
         distance = input.nextInt();
 
@@ -16,6 +18,7 @@ public class Practice18_FlightTicketPrice {
         System.out.print("Yolculuk tipini giriniz (1-Tek Yön / 2-Gidiş Dönüş): ");
         flightType = input.nextInt();
 
+        /*Calculating the ticket price according to the conditions*/
         if ((distance > 0) && (passengerAge > 0) && ((flightType == 1) || (flightType == 2))) {
             if (flightType == 1) {
                 if (passengerAge < 12) {
@@ -42,6 +45,7 @@ public class Practice18_FlightTicketPrice {
             isError = true;
         }
 
+        /*Showing the result to the user*/
         if (isError) {
             System.out.println("Hatalı Veri Girdiniz!");
         } else {

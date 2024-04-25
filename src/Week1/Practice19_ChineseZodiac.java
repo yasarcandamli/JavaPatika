@@ -53,6 +53,7 @@ public class Practice19_ChineseZodiac {
                 break;
             default:
                 System.out.println("Hatalı giriş yaptınız!");
+                break;
         }
 
         /*Displaying the result on the screen*/

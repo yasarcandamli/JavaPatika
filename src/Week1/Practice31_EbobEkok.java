@@ -12,12 +12,6 @@ public class Practice31_EbobEkok {
         System.out.print("2. Sayıyı Giriniz: ");
         number2 = input.nextInt();
 
-        /*if (number1 <= number2) {
-            min = number1;
-        } else {
-            min = number2;
-        }*/
-
         min = Math.min(number1, number2);
 
         int divider = min;
@@ -42,7 +36,7 @@ public class Practice31_EbobEkok {
         }
         System.out.println("EKOK = " + ekok1);
 
-        //2. Method:
+        //2. method of EKOK:
         /*int ekok2 = (number1 * number2) / ebob;
         System.out.println("EKOK = " + ekok2);*/
     }

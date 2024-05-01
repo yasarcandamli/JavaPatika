@@ -13,7 +13,7 @@ public class Homework02_PrimeNumber {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Lütfen Sorgulamak İstediğiniz Sayıyı Giriiniz: ");
+        System.out.print("Lütfen Sorgulamak İstediğiniz Sayıyı Giriniz: ");
         int number = input.nextInt();
 
         if (isPrime(number, number / 2)) {

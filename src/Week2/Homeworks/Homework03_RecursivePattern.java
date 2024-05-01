@@ -3,22 +3,32 @@ package Week2.Homeworks;
 import java.util.Scanner;
 
 public class Homework03_RecursivePattern {
-    static void pattern(int number) {
-        if (number <= 0) {
-            System.out.print(number + " ");
+    static boolean status = false;
+    static int inputNumber;
+    static int pattern(int methodNumber) {
+        if (status) {
+            if (methodNumber == inputNumber) {
+                System.out.print(methodNumber + " ");
+                return methodNumber;
+            }
+            System.out.print(methodNumber + " ");
+            return pattern(methodNumber + 5);
         } else {
-            System.out.print(number + " ");
-            pattern(number - 5);
-            System.out.print(number + " ");
+            if (methodNumber <= 0) {
+                status = true;
+                return pattern(methodNumber);
+            }
+            System.out.print(methodNumber + " ");
+            return pattern(methodNumber - 5);
         }
     }
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Please enter the number: ");
-        int number = input.nextInt();
+        System.out.print("Please, enter the input number: ");
+        inputNumber = input.nextInt();
 
-        pattern(number);
+        pattern(inputNumber);
     }
 }

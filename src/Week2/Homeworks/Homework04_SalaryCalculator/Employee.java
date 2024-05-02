@@ -51,14 +51,17 @@ public class Employee {
         return this.raise;
     }
 
+    //Calculating the salary with tax and bonus
     public double salaryWithTaxAndBonus(){
         return this.salaryWithTaxAndBonus = this.salary - tax() + bonus();
     }
 
+    //Calculating total salary
     public double totalSalary() {
         return this.totalSalary = this.salaryWithTaxAndBonus + raiseSalary();
     }
 
+    //Printing the result on screen
     @Override
     public String toString() {
         return "Employee{" +

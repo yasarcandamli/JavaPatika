@@ -23,6 +23,5 @@ public class Main {
         Student student3 = new Student("Mete Han", "789", "4", math, physics, chemistry);
         student3.addBulkExamGrade(80, 75, 70, 75, 70, 95);
         student3.isPass();
-
     }
 }

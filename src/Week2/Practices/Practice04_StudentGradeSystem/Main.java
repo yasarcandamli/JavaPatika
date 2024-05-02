@@ -17,11 +17,12 @@ public class Main {
         Student student1 = new Student("Yaşar Can", "123", "4", math, physics, chemistry);
         student1.addBulkExamGrade(90, 60, 75, 80, 60, 75);
         student1.isPass();
-        Student student3 = new Student("Mete Han", "789", "4", math, physics, chemistry);
-        student3.addBulkExamGrade(80, 75, 70, 75, 70, 95);
-        student3.isPass();
         Student student2 = new Student("Mehmet Emin", "456", "4", math, physics, chemistry);
         student2.addBulkExamGrade(45, 50, 30, 60, 20, 35);
         student2.isPass();
+        Student student3 = new Student("Mete Han", "789", "4", math, physics, chemistry);
+        student3.addBulkExamGrade(80, 75, 70, 75, 70, 95);
+        student3.isPass();
+
     }
 }

@@ -1,9 +1,9 @@
-package Week2.Practices;
+package Week2.Homeworks;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Practice10_SortingElements {
+public class Homework05_SortingElements {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

@@ -12,8 +12,9 @@ public class Homework05_SortingElements {
 
         int[] list = new int[listLength];
 
-        System.out.println("Please enter the elements of the array: ");
+
         for (int i = 0; i < list.length; i++) {
+            System.out.print("Please enter the " + (i + 1) + ". element of the array: ");
             list[i] = input.nextInt();
         }
 

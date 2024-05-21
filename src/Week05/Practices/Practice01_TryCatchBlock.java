@@ -1,4 +1,4 @@
-package Week05.Practices.Practice01;
+package Week05.Practices;
 
 public class Practice01_TryCatchBlock {
     public static void main(String[] args) {

@@ -7,30 +7,30 @@ public class Array {
     private int index;
 
     public Array() {
-        this.array = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        this.array = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};  //Creating an array with 10 elements.
     }
 
-    public int[] getArray() {
+    public int[] getArray() {   //Getter method of the array.
         return array;
     }
 
-    public void setArray(int[] array) {
+    public void setArray(int[] array) {     //Setter method of the array.
         this.array = array;
     }
 
-    public int getIndex() {
+    public int getIndex() {     //Getter method of the index.
         return index;
     }
 
-    public void setIndex(int index) {
+    public void setIndex(int index) {       //Setter method of the index.
         this.index = index;
     }
 
-    public void elementOfArray() {
+    public void elementOfArray() {      //The method for printing the element of array in the index taking from the user.
         System.out.println("Element in the " + getIndex() + ". index is: " + getArray()[index]);
     }
 
-    public void takeInput() {
+    public void takeInput() {       //The method for taking the index number from the user.
         Scanner input = new Scanner(System.in);
         System.out.print("Please, enter the index: ");
         setIndex(input.nextInt());

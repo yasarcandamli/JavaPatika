@@ -1,4 +1,4 @@
-package Week05.Practices.Practice02;
+package Week05.Practices.Practice02_BookSorter;
 
 public class Book {
     private String bookName;

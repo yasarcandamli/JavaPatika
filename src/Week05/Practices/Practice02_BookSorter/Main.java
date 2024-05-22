@@ -1,6 +1,5 @@
-package Week05.Practices.Practice02;
+package Week05.Practices.Practice02_BookSorter;
 
-import java.util.Iterator;
 import java.util.TreeSet;
 
 public class Main {

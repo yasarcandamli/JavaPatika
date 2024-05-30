@@ -15,7 +15,6 @@ public class Practice01_ReadingAndAddingNumbersFromFile {
                 int number = Integer.parseInt(line);
                 sum += number;
             }
-            System.out.println(sum); //Printing the sum
 
             fileReader.close();
             bufferedReader.close();
@@ -23,5 +22,6 @@ public class Practice01_ReadingAndAddingNumbersFromFile {
             System.out.println(e.getMessage());
         }
 
+        System.out.println("Total: " + sum); //Printing the sum
     }
 }

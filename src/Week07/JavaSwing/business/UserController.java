@@ -15,4 +15,12 @@ public class UserController {
     public ArrayList<User> findAll() {
         return this.userDao.findAll();
     }
+
+    public User getById(int id) {
+        if (id == 0) {
+            System.out.println("ID değeri 0 veya 0'dan küçük olamaz!");
+            return new User();
+        }
+        return this.userDao.getById(id);
+    }
 }

@@ -63,7 +63,8 @@ public class UserView extends JFrame {
 
         this.user_popup.add("Güncelle").addActionListener(e -> {
             int selectedId = Integer.parseInt(tbl_user.getValueAt(tbl_user.getSelectedRow(), 0).toString());
-            System.out.println(selectedId);
+            User selectedUser = this.userController.getById(selectedId);
+            System.out.println(selectedUser.toString());
         });
         this.user_popup.add("Sil").addActionListener(e -> {
             int selectedId = Integer.parseInt(tbl_user.getValueAt(tbl_user.getSelectedRow(), 0).toString());

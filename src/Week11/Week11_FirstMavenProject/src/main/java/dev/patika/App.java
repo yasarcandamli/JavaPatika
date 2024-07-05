@@ -71,10 +71,8 @@ public class App {
 
         entityManager.persist(product);*/
 
-
-
-        Color color = entityManager.find(Color.class, 1);
-        System.out.println(color.getProductList().toString());
+        Product product = entityManager.find(Product.class, 1);
+        System.out.println(product.getName());
         transaction.commit();
     }
 }

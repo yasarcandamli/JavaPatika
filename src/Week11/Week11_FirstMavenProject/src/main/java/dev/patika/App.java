@@ -6,6 +6,8 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -22,7 +24,7 @@ public class App {
         transaction.commit();*/
 
         transaction.begin();
-        //Category ekleme
+        /*//Category ekleme
         Category category = new Category();
         category.setName("Telefonlar");
         entityManager.persist(category);
@@ -52,7 +54,27 @@ public class App {
         product.setCategory(category);
         entityManager.persist(product);
 
-        System.out.println(product.toString());
+        System.out.println(product.toString());*/
+
+        /*Color blue = new Color("Blue");
+        Color red = new Color("Red");
+        Color yellow = new Color("Yellow");
+        entityManager.persist(blue);
+        entityManager.persist(red);
+        entityManager.persist(yellow);
+
+        Product product = entityManager.find(Product.class, 1);
+        List<Color> colorList = new ArrayList<>();
+        colorList.add(blue);
+        colorList.add(red);
+        product.setColorList(colorList);
+
+        entityManager.persist(product);*/
+
+
+
+        Color color = entityManager.find(Color.class, 1);
+        System.out.println(color.getProductList().toString());
         transaction.commit();
     }
 }

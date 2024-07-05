@@ -23,6 +23,14 @@ public class Product {
     @JoinColumn(name = "product_code_id", referencedColumnName = "code_id")
     private Code code;
 
+    @ManyToOne
+    @JoinColumn(name = "product_supplier_id", referencedColumnName = "supplier_id")
+    private Supplier supplier;
+
+    @ManyToOne
+    @JoinColumn(name = "product_category_id", referencedColumnName = "category_id")
+    private Category category;
+
     public Product() {
     }
 
@@ -66,6 +74,22 @@ public class Product {
         this.code = code;
     }
 
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -74,6 +98,8 @@ public class Product {
                 ", price=" + price +
                 ", stock=" + stock +
                 ", code=" + code +
+                ", supplier=" + supplier +
+                ", category=" + category +
                 '}';
     }
 }

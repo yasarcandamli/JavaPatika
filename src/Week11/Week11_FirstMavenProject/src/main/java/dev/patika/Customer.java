@@ -26,6 +26,9 @@ public class Customer {
     @Column(name = "customer_gender")
     private Gender customerGender;
 
+    public Customer() {
+    }
+
     public enum Gender {
         MALE,
         FEMALE

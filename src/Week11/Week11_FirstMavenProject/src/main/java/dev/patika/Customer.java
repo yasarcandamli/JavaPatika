@@ -70,4 +70,15 @@ public class Customer {
     public void setCustomerGender(Gender customerGender) {
         this.customerGender = customerGender;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customerId=" + customerId +
+                ", customerName='" + customerName + '\'' +
+                ", customerMail='" + customerMail + '\'' +
+                ", customerOnDate=" + customerOnDate +
+                ", customerGender=" + customerGender +
+                '}';
+    }
 }

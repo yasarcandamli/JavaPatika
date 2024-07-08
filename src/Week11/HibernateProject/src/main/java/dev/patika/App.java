@@ -49,6 +49,7 @@ public class App {
                     .getResultList();
             System.out.println(customers.toString());
 
+            //Tek veri çekeceksek getSingleResult() veya getSingleResultOrNull()
             Customer customer1 = session
                     .createSelectionQuery("FROM Customer WHERE id = 2", Customer.class)
                     .getSingleResultOrNull();

@@ -15,18 +15,18 @@ public class CustomerController {
 
     //Constructor
     private final ICustomerService customerService;
-    @Autowired
     public CustomerController(ICustomerService customerService) {
         this.customerService = customerService;
     }
 
-    //Setter
+    /*//Setter
     private ICustomerService customerService;
     @Autowired
     public void setCustomerService(ICustomerService customerService) {
         this.customerService = customerService;
     }
 
+    //Field
     @Autowired
-    private ICustomerService customerService;
+    private ICustomerService customerService;*/
 }

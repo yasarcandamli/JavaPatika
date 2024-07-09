@@ -1,6 +1,6 @@
 package dev.patika.spring.dao;
 
-import dev.patika.spring.Customer;
+import dev.patika.spring.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

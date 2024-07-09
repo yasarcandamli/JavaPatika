@@ -1,32 +1,60 @@
 package dev.patika.spring.api;
 
-import dev.patika.spring.Customer;
 import dev.patika.spring.business.abstracts.ICustomerService;
+import dev.patika.spring.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/v1")
 public class CustomerController {
 
-    //Constructor
+    /*//Constructor
     private final ICustomerService customerService;
     public CustomerController(ICustomerService customerService) {
         this.customerService = customerService;
     }
 
-    /*//Setter
+    //Setter
     private ICustomerService customerService;
     @Autowired
     public void setCustomerService(ICustomerService customerService) {
         this.customerService = customerService;
-    }
+    }*/
 
     //Field
     @Autowired
-    private ICustomerService customerService;*/
+    private ICustomerService customerService;
+
+    @GetMapping("/customers")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Customer> findAll() {
+        return this.customerService.findAll();
+    }
+
+    @PostMapping("/customers")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Customer save(@RequestBody Customer customer) {
+        return this.customerService.save(customer);
+    }
+
+    @PutMapping("/customers")
+    @ResponseStatus(HttpStatus.OK)
+    public Customer update(@RequestBody Customer customer) {
+        return this.customerService.update(customer);
+    }
+
+    @DeleteMapping("/customers/{id}")
+    public void delete(@PathVariable("id") int id) {
+        this.customerService.delete(id);
+    }
+
+    @GetMapping("/customers/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Customer getById(@PathVariable("id") int id) {
+        return this.customerService.getById(id);
+    }
 }

@@ -1,14 +1,16 @@
 package dev.patika.spring.api;
 
 import dev.patika.spring.business.abstracts.ICustomerService;
-import dev.patika.spring.dto.CustomerDto;
-import dev.patika.spring.dto.CustomerDtoConverter;
+import dev.patika.spring.dto.CustomerResponse;
+import dev.patika.spring.dto.CustomerSaveRequest;
+import dev.patika.spring.dto.CustomerUpdateRequest;
 import dev.patika.spring.entity.Customer;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,33 +36,35 @@ public class CustomerController {
     private ICustomerService customerService;
 
     @Autowired
-    private CustomerDtoConverter converter;
-
-    @Autowired
     private ModelMapper modelMapper;
 
     @GetMapping("/customers")
     @ResponseStatus(HttpStatus.OK)
-    public List<CustomerDto> findAll() {
+    public List<CustomerResponse> findAll() {
         /*List<CustomerDto> customerDtoList = this.customerService.findAll().stream().map(
                 customer -> this.converter.convertDto(customer)
         ).collect(Collectors.toList());*/
-        List<CustomerDto> customerDtoList = this.customerService.findAll().stream().map(
-                customer -> this.modelMapper.map(customer, CustomerDto.class)
+        List<CustomerResponse> customerDtoList = this.customerService.findAll().stream().map(
+                customer -> this.modelMapper.map(customer, CustomerResponse.class)
         ).collect(Collectors.toList());
         return customerDtoList;
     }
 
     @PostMapping("/customers")
     @ResponseStatus(HttpStatus.CREATED)
-    public Customer save(@RequestBody Customer customer) {
-        return this.customerService.save(customer);
+    public Customer save(@RequestBody CustomerSaveRequest customerSaveRequest) {
+        Customer newCustomer = this.modelMapper.map(customerSaveRequest, Customer.class);
+        newCustomer.setOnDate(LocalDate.now());
+        return this.customerService.save(newCustomer);
     }
 
     @PutMapping("/customers")
     @ResponseStatus(HttpStatus.OK)
-    public Customer update(@RequestBody Customer customer) {
-        return this.customerService.update(customer);
+    public Customer update(@RequestBody CustomerUpdateRequest customerUpdateRequest) {
+        Customer updatedCustomer = this.customerService.getById(customerUpdateRequest.getId());
+        updatedCustomer.setName(customerUpdateRequest.getName());
+        updatedCustomer.setGender(customerUpdateRequest.getGender());
+        return this.customerService.update(updatedCustomer);
     }
 
     @DeleteMapping("/customers/{id}")
@@ -70,7 +74,7 @@ public class CustomerController {
 
     @GetMapping("/customers/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public CustomerDto getById(@PathVariable("id") int id) {
-        return this.modelMapper.map(this.customerService.getById(id), CustomerDto.class);
+    public CustomerResponse getById(@PathVariable("id") int id) {
+        return this.modelMapper.map(this.customerService.getById(id), CustomerResponse.class);
     }
 }

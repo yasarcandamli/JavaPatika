@@ -1,19 +1,23 @@
 package dev.patika.spring.dto;
 
+import dev.patika.spring.entity.Customer;
+
 // Pojo
 // Customer -> CustomerDto
-public class CustomerDto {
+public class CustomerResponse {
     private int id;
     private String name;
     private String mail;
+    public Customer.GENDER gender;
 
-    public CustomerDto(int id, String name, String mail) {
+    public CustomerResponse(int id, String name, String mail, Customer.GENDER gender) {
         this.id = id;
         this.name = name;
         this.mail = mail;
+        this.gender = gender;
     }
 
-    public CustomerDto() {
+    public CustomerResponse() {
     }
 
     public int getId() {
@@ -40,12 +44,21 @@ public class CustomerDto {
         this.mail = mail;
     }
 
+    public Customer.GENDER getGender() {
+        return gender;
+    }
+
+    public void setGender(Customer.GENDER gender) {
+        this.gender = gender;
+    }
+
     @Override
     public String toString() {
-        return "CustomerDto{" +
+        return "CustomerResponse{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", mail='" + mail + '\'' +
+                ", gender=" + gender +
                 '}';
     }
 }
